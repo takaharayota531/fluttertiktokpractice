@@ -6,9 +6,17 @@ import 'package:tiktokpractice/views/screens/auth/login_screen.dart';
 import 'package:tiktokpractice/views/screens/auth/signup_screen.dart';
 import 'constants.dart';
 
-Future<void> main() async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp().then((value) {
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+      apiKey: "AIzaSyDADfl5P0WDvD3C7yU7h2Gic7psHyH0LJY",
+      projectId: "udemysnsapplication0103",
+      storageBucket: "udemysnsapplication0103.appspot.com",
+      messagingSenderId: "821295791396",
+      appId: "1:821295791396:web:ba42b509cb91b162a547b1",
+    ),
+  ).then((value) {
     Get.put(AuthController());
   });
   runApp(const MyApp());
