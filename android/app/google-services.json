@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "937471545919",
+    "project_id": "tiktok-tutorial-0127",
+    "storage_bucket": "tiktok-tutorial-0127.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:937471545919:android:c46a79e97bb06dc2f5de8a",
+        "android_client_info": {
+          "package_name": "com.example.tiktokpractice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "937471545919-0ivmtoqs3skb1dq6g45a4lfrn58eqlua.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBooGGDopHflMewPeeYWbRyL3KrJeRBmMA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "937471545919-0ivmtoqs3skb1dq6g45a4lfrn58eqlua.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "937471545919-eih3ls2vd6ollcg471q75op8hbh2kc33.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tiktokpractice"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
