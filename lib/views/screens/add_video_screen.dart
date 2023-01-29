@@ -3,12 +3,12 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:image_picker_web/image_picker_web.dart';
+// import 'package:image_picker_web/image_picker_web.dart';
 // import 'package:image_picker_web/image_picker_web.dart';
 import 'package:tiktokpractice/constants.dart';
 import 'confirm_screen.dart';
 import 'package:universal_platform/universal_platform.dart';
-import 'package:image_picker_for_web/image_picker_for_web.dart';
+// import 'package:image_picker_for_web/image_picker_for_web.dart';
 
 class AddVideoScreen extends StatelessWidget {
   const AddVideoScreen({Key? key}) : super(key: key);
