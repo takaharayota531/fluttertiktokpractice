@@ -5,6 +5,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:tiktokpractice/controllers/auth_controller.dart';
 import 'package:tiktokpractice/views/screens/add_video_screen.dart';
+import 'package:tiktokpractice/views/screens/video_screen.dart';
 
 //string
 const String TITLE = "アンナビアプリ開発試作②tiktok";
@@ -71,6 +72,7 @@ const String SONG_NAME = "Song Name";
 const String CAPTION = "Caption";
 const String SHARE = "Share";
 
+
 // controller
 var AUTH_CONTROLLER = AuthController.instance;
 
@@ -87,7 +89,7 @@ const String ADD_PAGE_SCREEN = "Add Page Screen";
 const String MESSAGES_SCREEN = "Messages Screen";
 const String PROFILE_SCREEN = "Profile Screen";
 const pages = [
-  Text(HOME_SCREEN),
+  VideoScreen(),
   Text(SEARCH_SCREEN),
   AddVideoScreen(),
   Text(MESSAGES_SCREEN),
