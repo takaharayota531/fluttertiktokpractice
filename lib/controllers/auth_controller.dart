@@ -7,7 +7,7 @@ import 'package:tiktokpractice/constants.dart';
 import 'package:tiktokpractice/models/user.dart' as model;
 import 'package:tiktokpractice/views/screens/auth/login_screen.dart';
 
-import '../views/home_screen.dart';
+import '../views/screens/home_screen.dart';
 
 class AuthController extends GetxController {
   static AuthController instance = Get.find();
