@@ -5,13 +5,33 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 import 'package:tiktokpractice/constants.dart';
 import 'package:tiktokpractice/models/user.dart' as model;
+import 'package:tiktokpractice/views/screens/auth/login_screen.dart';
+
+import '../views/home_screen.dart';
 
 class AuthController extends GetxController {
   static AuthController instance = Get.find();
-
+  late Rx<User?> _user;
   late Rx<File?> _pickedImage;
 
   File? get ProfilePhoto => _pickedImage.value;
+
+  @override
+  void onReady() {
+    super.onReady();
+    _user = Rx<User?>(FIREBASE_AUTH.currentUser);
+    // 現在情報の取得
+    _user.bindStream(FIREBASE_AUTH.authStateChanges());
+    ever(_user, _setInitialScreen);
+  }
+
+  _setInitialScreen(User? user) {
+    if (user == null) {
+      Get.offAll(() => LoginScreen());
+    } else {
+      Get.offAll(() => HomeScreen());
+    }
+  }
 
   Future<void> pickImage() async {
     final pickedImage =
@@ -77,9 +97,11 @@ class AuthController extends GetxController {
   }
 
   void loginUser(String email, String password) async {
+    print("email" + email);
+    print("password" + password);
     try {
       if (email.isNotEmpty && password.isNotEmpty) {
-        await FIREBASE_AUTH.signInWithEmailAndPassword(
+        UserCredential result = await FIREBASE_AUTH.signInWithEmailAndPassword(
             email: email, password: password);
         print("log success");
       } else {

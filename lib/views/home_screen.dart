@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tiktokpractice/views/widgets/custom_icon.dart';
+
+import '../constants.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -7,6 +10,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int pageIdx = 0;
+  final double buttonSize = 30;
 
   @override
   Widget build(BuildContext context) {
@@ -18,18 +22,20 @@ class _HomeScreenState extends State<HomeScreen> {
           });
         },
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.red,
+        backgroundColor: BACKGROUND_COLOR,
+        selectedItemColor: Colors.red,
         unselectedItemColor: Colors.white,
         currentIndex: pageIdx,
-        items: const [
+        items: [
           BottomNavigationBarItem(
-              icon: Icon(Icons.home, size: 30), label: 'Home'),
+              icon: Icon(Icons.home, size: buttonSize), label: HOME),
           BottomNavigationBarItem(
-              icon: Icon(Icons.search, size: 30), label: 'Search'),
+              icon: Icon(Icons.search, size: buttonSize), label: SEARCH),
+          BottomNavigationBarItem(icon: CustomIcon(), label: ''),
           BottomNavigationBarItem(
-              icon: Icon(Icons.message, size: 30), label: 'Messages'),
+              icon: Icon(Icons.message, size: buttonSize), label: MESSAGES),
           BottomNavigationBarItem(
-              icon: Icon(Icons.person, size: 30), label: 'Profile'),
+              icon: Icon(Icons.person, size: buttonSize), label: PROFILE),
         ],
       ),
       body: pages[pageIdx],
